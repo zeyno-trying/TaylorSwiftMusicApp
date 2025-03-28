@@ -1,11 +1,7 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React from "react";
+import { Text } from "react-native";
 function HomeScreen() {
-    return (
-
-            <Text>Home Screen</Text>
-
-    );
+  return <Text>Home Screen</Text>;
 }
 
 export default HomeScreen;

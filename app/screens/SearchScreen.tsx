@@ -1,11 +1,7 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React from "react";
+import { Text } from "react-native";
 function SearchScreen() {
-    return (
-
-            <Text>Search Screen</Text>
-
-    );
+  return <Text>Search Screen</Text>;
 }
 
 export default SearchScreen;
