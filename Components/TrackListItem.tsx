@@ -1,17 +1,20 @@
 import React from 'react';
 import { Pressable, StyleSheet, View, Text, Image } from 'react-native';
 import {Track} from "../types"
+import { usePlayerContext } from "../providers/PlayerProvider"
 
 
 type TrackListItemProp = {
     track:Track;
 }
 const TrackListItem = ({track}:TrackListItemProp) => {
+   const { setTrack } = usePlayerContext();
     const image = track.album?.images?.[0];
+
+    
     return (
       <Pressable
-      onPress={() => console.log('Playing track ', track.id)}
-      className='w-[100%] p-10 gap-5 flex-row center'>
+      onPress={() => setTrack(track)} style={styles.container}>
 {image && <Image source={{ uri: image.url }} style={styles.image} />}
 <View>
     <Text className='font-semibold font-white '>{track.name}</Text>
@@ -22,6 +25,14 @@ const TrackListItem = ({track}:TrackListItemProp) => {
 }
 
 const styles = StyleSheet.create({
+  container: {
+  width: '100%',
+  padding: 10,
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 5, 
+},
+
   image: {
     width: 50,
     aspectRatio: 1,
