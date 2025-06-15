@@ -9,7 +9,7 @@ import {
 import bgimg from "/Users/zizi/giftAgaiin/TaylorSwiftPlayer/assets/img.png";
 import { useSpotifyAuth} from "hooks/useSpotifyAuth";
 
-export default function AuthScreen( { navigation } : any ) {
+export default function AuthScreen( navigation : any ) {
   const { request, response, promptAsync } = useSpotifyAuth();
   const [accessToken, setAccessToken] = useState<string | null>(null);
 
@@ -19,7 +19,7 @@ export default function AuthScreen( { navigation } : any ) {
     if (response?.type === 'success') {
       const { access_token } = response.params;
       setAccessToken(access_token);
-      navigation.navigate('tabs', { token: access_token });
+      navigation.navigate('Home', { token: access_token });
     }
   }, [response]);
 

@@ -3,7 +3,7 @@ export const discovery = {
     tokenEndpoint: 'https://accounts.spotify.com/api/token',
 };
 
-export const SPOTIFY_CLIENT_ID = 'bfbec162bfe8491fb7bee09735e13cb8'; // Replace with your actual client ID
+export const SPOTIFY_CLIENT_ID = 'bfbec162bfe8491fb7bee09735e13cb8';
 
 export const SPOTIFY_SCOPES = [
     'user-read-private',

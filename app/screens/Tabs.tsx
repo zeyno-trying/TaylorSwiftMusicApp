@@ -5,13 +5,15 @@ import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
 import FavoritesScreen from "./FavoritesScreen";
 import PlaylistsScreen from "./PlaylistesScreen";
-import { Image } from "react-native";
-
+import { Image, View } from "react-native";
+import Player from "Components/Player";
 const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
   return (
+<View className="flex-1">
 
+<Player></Player>
       <Tab.Navigator
 
         screenOptions={{
@@ -35,6 +37,7 @@ export default function Tabs() {
           headerShown: false,
         }}
       >
+  
         <Tab.Screen
           name="Home"
           component={HomeScreen}
@@ -104,6 +107,7 @@ export default function Tabs() {
           }}
         />
       </Tab.Navigator>
-
+<Player></Player>
+</View>
   );
 }
