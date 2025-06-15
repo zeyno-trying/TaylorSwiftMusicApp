@@ -6,11 +6,12 @@ import SearchScreen from "./SearchScreen";
 import FavoritesScreen from "./FavoritesScreen";
 import PlaylistsScreen from "./PlaylistesScreen";
 import Player from "Components/Player";
-
+import PlayerProvider from "providers/PlayerProvider";
 const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
   return (
+    <PlayerProvider>
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
@@ -108,5 +109,6 @@ export default function Tabs() {
         }}
       />
     </Tab.Navigator>
+    </PlayerProvider>
   );
 }
